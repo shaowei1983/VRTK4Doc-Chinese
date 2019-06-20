@@ -1,0 +1,214 @@
+---
+---
+
+@import "{{ site.theme }}";
+
+$font-stack: roboto, "Helvetica Neue", Helvetica, Arial, sans-serif;
+$color-pig-pink: #F3AEAE;
+$color-pig-bright: #FFBDBD;
+$color-pig-shades: #D69A9A;
+$color-pig-swill: #936D6D;
+$color-pig-night: #000000;
+$color-pig-storm: #5B5B5B;
+$color-pig-cloud: #E5E3E3;
+$color-pig-day: #FAFAFA;
+$color-pig-sky: #66A9D6;
+$color-master-background: #FFFFFF;
+$color-faded-text: #BBBBBB;
+$content-width: 850px;
+$content-padding: 30px;
+$menu-width: 200px;
+$menu-padding: 20px;
+$side-margin-left: -(($content-width * 0.5) + $menu-width + $menu-padding);
+$sml-content-width: $content-width - 250px;
+$sml-side-margin-left: -(($sml-content-width * 0.5) + $menu-width + $menu-padding);
+
+body {
+  background-image: none;
+  background-color: $color-pig-day;
+  font: 16px/24px $font-stack;
+
+  a {
+    color: $color-pig-sky;
+  }
+
+  p, ul, ol, table, pre, dl {
+    font-weight: 300;
+  }
+
+  blockquote {
+    border-left-color: $color-pig-pink;
+  }
+
+  ul {
+    list-style-image: none;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-weight: 300;
+  }
+
+  header {
+    padding: 25px 0px 40px 0px;
+    background-image: none;
+    background-color: $color-pig-storm;
+    min-height: auto;
+
+    @media print, screen and (max-width: 480px) {
+      padding-bottom: 20px;
+    }
+
+    h1 {
+      @media print, screen and (max-width: 720px) {
+        font: 51px/40px $font-stack;
+        font-weight: 200;
+      }
+
+      @media print, screen and (max-width: 480px) {
+        font: 44px/62px $font-stack;
+        font-weight: 200;
+      }
+
+      font: 61px/46px $font-stack;
+      font-weight: 200;
+      text-shadow: none;
+      white-space: pre;
+      visibility: hidden;
+      height: 62px;
+
+      &:before {
+        visibility: visible;
+        content: "VRTK Academy\a";
+      }
+    }
+  }
+
+  #banner {
+    right: 0;
+    margin-right: 0px;
+    background-color: $color-pig-pink;
+    border: none;
+    text-align: center;
+
+    #logo {
+      display: none !important;
+    }
+
+    .fork {
+      position: relative !important;
+      background-color: $color-pig-day;
+      padding-top: 14px;
+      left: auto !important;
+      float: none !important;
+      margin-left: auto !important;
+    }
+
+    .button {
+      border-color: $color-pig-shades;
+
+      &:hover {
+        background-color: $color-pig-bright;
+      }
+    }
+  }
+
+  .wrapper {
+    width: $content-width;
+
+    @media print, screen and (max-width: 1300px) {
+      width: $sml-content-width;
+    }
+
+    @media print, screen and (max-width: 1060px) {
+      width: auto;
+    }
+
+    nav {
+      width: $menu-width;
+      margin-left: $side-margin-left;
+
+      @media print, screen and (max-width: 1300px) {
+        margin-left: $sml-side-margin-left;
+      }
+
+      ul {
+        li.tag-h1 {
+          display: none;
+        }
+      }
+    }
+
+    section {
+      width: $content-width - ($content-padding * 2);
+      background-color: $color-master-background;
+
+      h1 {
+        font-size: 30px;
+      }
+
+      h2 {
+        font-size: 26px;
+        border-bottom: 1px solid $color-pig-cloud;
+      }
+
+      h3 {
+        font-size: 22px;
+        font-weight: 28px;
+
+        em {
+          font-size: 70%;
+          font-weight: 300;
+          color: $color-pig-storm;
+        }
+      }
+
+      pre {
+        background-color: $color-pig-cloud;
+      }
+
+      code {
+        color: $color-pig-swill;
+        background-color: $color-pig-cloud;
+        text-shadow: none;
+      }
+
+      blockquote {
+        ul {
+          padding: 0 0 0 10px;
+        }
+      }
+
+      @media print, screen and (max-width: 1300px) {
+        width: $sml-content-width - ($content-padding * 2);
+      }
+
+      @media print, screen and (max-width: 1060px) {
+        width: auto;
+      }
+    }
+
+    footer {
+      font-size: 14px;
+      width: $menu-width;
+      margin-left: $side-margin-left;
+
+      @media print, screen and (max-width: 1300px) {
+        margin-left: $sml-side-margin-left;
+      }
+
+      p {
+        line-height: 18px;
+      }
+
+      small {
+        color: $color-faded-text;
+        line-height: 16px;
+
+        a {
+          color: $color-faded-text;
+          font-weight: 300;
+        }
+      }
+    }
+  }
+}
